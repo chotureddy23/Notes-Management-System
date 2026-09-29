@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #4F46E5;
+  --color-primary-dark: #3730A3;
+  --color-accent: #6366F1;
+  --color-accent-light: #818CF8;
+  --color-bg-gradient: linear-gradient(135deg, #312E81 0%, #4338CA 45%, #111827 100%);
+  --color-white: #FFFFFF;
+  --color-text-dark: #111827;
+  --color-text-secondary: #6B7280;
+  --color-border: #E5E7EB;
+  --color-success: #10B981;
+}
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    transition-property: background-color, border-color, color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+  }
+
+  body {
+    @apply bg-[#F8FAFC] dark:bg-[#0B1120] text-[#0F172A] dark:text-[#F8FAFC];
+    min-height: 100vh;
+  }
+}
+
+/* Custom subtle scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(156, 163, 175, 0.4);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(156, 163, 175, 0.7);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background-color: rgba(75, 85, 99, 0.5);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(75, 85, 99, 0.8);
+}
+
+/* Note Content Typography rendering */
+.note-markdown h1 {
+  @apply text-2xl font-bold mt-6 mb-3 text-gray-900 dark:text-gray-100;
+}
+.note-markdown h2 {
+  @apply text-xl font-bold mt-5 mb-2 text-gray-900 dark:text-gray-100;
+}
+.note-markdown h3 {
+  @apply text-lg font-semibold mt-4 mb-2 text-gray-800 dark:text-gray-200;
+}
+.note-markdown p {
+  @apply mb-3 leading-relaxed text-gray-700 dark:text-gray-300;
+}
+.note-markdown ul {
+  @apply list-disc list-inside mb-4 space-y-1 text-gray-700 dark:text-gray-300 pl-2;
+}
+.note-markdown ol {
+  @apply list-decimal list-inside mb-4 space-y-1 text-gray-700 dark:text-gray-300 pl-2;
+}
+.note-markdown li {
+  @apply leading-relaxed;
+}
+.note-markdown blockquote {
+  @apply border-l-4 border-indigo-500 pl-4 py-1.5 my-4 italic bg-indigo-50/50 dark:bg-indigo-950/20 text-gray-700 dark:text-gray-300 rounded-r-lg;
+}
+.note-markdown pre {
+  @apply bg-gray-900 text-gray-100 p-4 rounded-xl overflow-x-auto my-4 text-sm font-mono shadow-inner border border-gray-800;
+}
+.note-markdown code:not(pre code) {
+  @apply bg-gray-100 dark:bg-gray-800 text-indigo-600 dark:text-indigo-400 px-1.5 py-0.5 rounded text-sm font-mono border border-gray-200 dark:border-gray-700;
+}
+.note-markdown table {
+  @apply w-full border-collapse my-4 text-sm;
+}
+.note-markdown th {
+  @apply bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 px-3 py-2 text-left font-semibold;
+}
+.note-markdown td {
+  @apply border border-gray-200 dark:border-gray-700 px-3 py-2;
+}
