@@ -178,3 +178,5 @@ You can log in with the pre-seeded demo user or register a brand new account:
 - `PUT    /api/users/profile` — Update name, role, bio
 - `PUT    /api/users/password` — Change password
 - `DELETE /api/users/account` — Permanently delete user account and all notes
+=======
+# Notes-Management-System
